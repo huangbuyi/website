@@ -1,0 +1,15 @@
+{
+  "name": "requirejs",
+  "homepage": "https://github.com/requirejs/requirejs",
+  "version": "2.3.2",
+  "_release": "2.3.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.3.2",
+    "commit": "478b6b4f5e4b97c19113294ac33dacdd10730e4b"
+  },
+  "_source": "git://github.com/requirejs/requirejs.git",
+  "_target": "^2.3.2",
+  "_originalSource": "requirejs/requirejs",
+  "_direct": true
+}

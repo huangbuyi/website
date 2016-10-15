@@ -1,0 +1,244 @@
+*{padding:0;margin:0}
+a{text-decoration: none}
+li{list-style: none}
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #ccc;
+    //text-rendering: optimizeLegibility;
+}
+
+
+@media (max-width:321px){
+    body,html{  font-size: 16px;width:320px;}
+}
+@media (max-width:376px) and (min-width:321px){
+    body,html{  font-size: 19px;}
+}
+@media (max-width:426px) and (min-width:376px){
+    body,html{  font-size: 21px;}
+}
+@media (min-width:426px){
+    body,html{  font-size: 21px;}
+}
+/*
+12 0.5714
+13 0.6190
+14 0.6667
+15 0.7143
+16 0.7619
+17 0.8095
+12 14 16 20 34
+*/
+
+html, body{
+    height:100%;
+}
+.page{
+    height: 100%;
+}
+.header{
+    position:absolute;
+    top:0;
+    right:0;
+    height:2.5rem;
+    width:100%;
+    /*background:  linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(0, 150, 136, 0.85) 78%,rgba(0, 150, 136, 0.8) 100%);*/
+    color:#eee;
+    /*z-index: 1;*/
+
+    background: rgba(0, 150, 136, 1);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+}
+
+.header .menu_handle
+{
+    background: center center no-repeat transparent;
+    background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
+
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+.header .menu_handle:hover{
+    left: 0.1rem
+}
+.header p{
+    font-weight: 100;
+    position: relative;
+    display: inline-block;
+    float:right;
+    color:rgba(255,255,255,0.54);
+    font-size: 0.6667rem;
+}
+.login, .logout{
+    display: inline-block;
+    position: relative;
+    background: none;
+    color:inherit;
+    font-size: 0.6667rem;
+    margin-left: 0.3333rem ;
+}
+.login:hover, .logout:hover{
+    color:rgba(255,255,255,0.87);
+}
+.white-popup{
+    text-align: center;
+}
+
+.white-popup form{
+    display: inline-block;
+    margin:0 auto;
+    background: #fff;
+    color:#ccc;
+}
+
+.mm-page, .page{
+    height:100%;
+}
+main{
+    position: absolute;
+    top:0;
+    bottom:0;
+    text-align: center;
+    overflow-x: auto;
+    width:100%;
+    box-sizing: border-box;
+    box-shadow:0 0 0.2rem 0.2rem #bebebe inset;
+    background: #ccc;
+    margin-top: 2.5rem;
+    overflow-y: auto;
+    padding-bottom: 3rem;
+}
+main > div > div{
+    display: inline-block;
+    padding: 1rem;
+    margin:1rem auto 0 auto;
+    border-radius: 0.1905rem;
+    box-shadow:0 0 0.2rem 0.2rem #bebebe;
+    background: #fff;
+}
+
+/* 服务器信息显示 */
+.server > div{
+    text-align: left;
+    width:80%;
+}
+.server p{
+    line-height: 1.4286rem;
+    color:rgba(0,0,0,0.87);
+    font-size: 0.7619rem;
+}
+.server h2{
+    text-align: center;
+    margin-bottom: 1rem;
+    color:rgba(0,0,0,0.54);
+}
+.server_label{
+    display: inline-block;
+    width:38%;
+    text-align: right;
+}
+
+/* 列表显示 */
+#serials_list a {
+    color: #00796b;
+}
+#serials_list a:hover{
+    text-decoration: underline;
+}
+.paging a:hover{
+    color:#009688;
+}
+form{
+    margin:0 auto;
+    min-width: 20rem;
+    text-align: left;
+}
+
+.serials .list{
+    font-size: 12px;
+}
+#serials_list{
+    font-size: 12px;
+}
+
+/* 更新数据表格 */
+.update_form{
+    padding:0;
+    margin: 1rem auto;
+}
+.update_form label{
+    font-size: 12px;
+    line-height: 1rem;
+    color:#9e9e9e;
+}
+.update_form label{
+    display: inline-block;
+    margin-top:0.3810rem;
+}
+.update_form input{
+    border:1px solid #e0e0e0;
+    padding: 0.4762rem 0.3809rem;
+    width:100%;
+    box-sizing: border-box;
+    margin:0;
+}
+.update_form input[type=submit]{
+    cursor:pointer;
+}
+.update_form input[type=submit]:hover{
+    color:rgba(255,255,255,0.87);
+    background:#009688;
+    border:1px solid #006658;
+    cursor:pointer;
+}
+#update_name{
+    padding:0.6667rem ;
+}
+.update_form select{
+    color:rgba(0,0,0,0.87);
+}
+.update_form textarea{
+    width:100%;
+    box-sizing: border-box;
+    border:1px solid #e0e0e0;
+    padding: 0.1905rem;
+}
+.update_btns{
+    margin-top: 1rem;
+}
+#submit_all_btn,#delete_it_btn,#cancel_it_btn,#add_new_btn{
+    float:left;
+    width:33.3333%;
+    height:2rem;
+    margin:0;
+    color:#006658;
+    background: #f0f0f0;
+    border:none;
+    outline: hidden;
+    cursor:pointer;
+    font-size: 0.7619rem;
+}
+#submit_all_btn:hover,#add_new_btn:hover{
+    color:rgba(255,255,255,0.87);
+    background:#009688;
+    border:1px solid #006658;
+}
+#delete_it_btn:hover{
+    color:rgba(255,255,255,0.87);
+    background: rgba(232,54,70,1);
+    border:1px solid rgba(190,17,35,1);
+}
+#cancel_it_btn:hover{
+    color:rgba(0,0,0,1);
+    background: #969696;
+    border:1px solid #666666;
+}

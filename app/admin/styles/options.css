@@ -1,0 +1,111 @@
+/* jquery ui */
+.ui-datepicker-header{
+    color:#009688;
+}
+
+
+.ui-datepicker-prev, .ui-datepicker-next{
+    cursor: pointer;
+    background: transparent;
+}
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover{
+    background: #009688;
+}
+
+.ui-datepicker-prev .ui-icon{
+    background: center center no-repeat transparent;
+    background-image: url(../images/prev.png);
+}
+.ui-datepicker-prev:hover .ui-icon{
+    background-image: url(../images/prev_hover.png);
+}
+.ui-datepicker-next .ui-icon{
+    background: center center no-repeat transparent;
+    background-image: url(../images/next.png);
+}
+.ui-datepicker-next:hover .ui-icon{
+    background-image: url(../images/next_hover.png);
+}
+
+.ui-datepicker-month, .ui-datepicker-year{
+    color:#009688;
+}
+.ui-datepicker-current-day .ui-state-active{
+    border: 1px solid #006658;
+    background:#009688;;
+}
+.ui-datepicker-today .ui-state-highlight{
+    border-color:#10b6a8;
+    color:#fff;
+    background:#10b6a8;
+}
+
+/* 选择框内字符大小 */
+.ui-selectmenu-menu .ui-menu-item{
+    font-size: 0.5714rem;
+    line-height: 0.8571rem;
+}
+
+/* 标签输入 */
+div.tagsinput span.tag{
+    cursor:default;
+    background:#10b6a8;
+    border: 1px solid #006658;
+    color:#fff;
+    font-weight: bold;
+}
+div.tagsinput span.tag:hover{
+    background: #30c6b8;
+}
+div.tagsinput span.tag a{
+    color:rgba(255,255,255,0.54);
+}
+div.tagsinput span.tag a:hover{
+    background: rgba(255,66,99,0.54) ;
+    color:rgba(255,255,255,0.87);
+}
+div.tagsinput{
+    padding: 0.1905rem;
+}
+
+/* 手风琴ui */
+.ui-accordion .ui-accordion-header{
+    height:1rem;
+    line-height: 1rem;
+    font-size: 0.6667rem;
+    padding: 0;
+    text-align: left;
+}
+
+.ui-accordion .ui-accordion-content{
+    padding: 1em 1rem 0.6667rem 1rem;
+}
+.ui-state-default{
+    color:rgba(0,0,0,0.54);
+}
+.ui-state-active{
+    background:#009688;
+    border:1px solid #006658;
+    color:rgba(255,255,255,0.87);
+    outline: hidden;
+}
+
+
+/* DataTable表格插件 */
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 2px 4px;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 5px 14px;
+    cursor:pointer;
+}
+
+table.dataTable tbody tr:nth-child(2n){
+    background: #f0f0f0;
+}
+table.dataTable tbody tr:hover{
+    background: #ecfaea;
+}
+table.dataTable thead th div.DataTables_sort_wrapper span{
+    right:-14px;
+}
