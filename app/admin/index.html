@@ -9,32 +9,24 @@
     <meta name="format-detection" content="telephone=no, email=no">
 
     <title>四盒子的后台</title>
-    <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
-    <!-- Place favicon.ico in the root directory -->
+
+     <!--Place favicon.ico in the root directory -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/fine-uploader/dist/fine-uploader-new.css" />
+    <link rel="stylesheet" href="../../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" href="../../bower_components/magnific-popup/dist/magnific-popup.css" />
+    <link rel="stylesheet" href="../../bower_components/datatables.net-jqui/css/dataTables.jqueryui.css" />
+    <link rel="stylesheet" href="../../bower_components/jquery.tagsinput/src/jquery.tagsinput.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/add_serials.css">
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/core.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/button.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/menu.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/checkboxradio.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/accordion.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/datepicker.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/selectmenu.css">-->
-    <!--<link rel="stylesheet" href="../../bower_components/jquery-ui/themes/base/spinner.css">-->
     <link rel="stylesheet" href="styles/jquery-ui.css">
-
-    <link rel="stylesheet" href="../../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
-    <link rel="stylesheet" href="../../bower_components/fine-uploader/dist/fine-uploader-new.css">
-    <link rel="stylesheet" href="../../bower_components/datatables.net-jqui/css/dataTables.jqueryui.css">
-    <link rel="stylesheet" href="../../bower_components/magnific-popup/dist/magnific-popup.css">
-    <link rel="stylesheet" href="../../bower_components/jquery.tagsinput/src/jquery.tagsinput.css">
     <link rel="stylesheet" href="styles/options.css">
     <!-- endbuild -->
     
@@ -252,38 +244,38 @@
         </div>
 
         <div id="insert_items" class="serialsAdd" style="display:none">
-          <div class="add_serial">
+          <div class="add_panel">
             <form id="insert_serials" action="doSerialsAdmin.php?act=add" method="post">
               <label for="serial_name">电视剧名称</label><input id="serial_name" type="text" name="c_name"  placeholder="未填写" required><br>
               <label for="serial_fname">外文名称</label><input id="serial_fname" type="text" name="f_name"  placeholder="未填写"><br>
               <button>添加电视剧</button>
             </form>
           </div>
-          <div class="add_serials">
+          <div class="add_panel">
             <form  id="insert_movie" action="doSerialsAdmin.php?act=add" method="post">
               <label for="movie_name">电影名称</label><input id="movie_name" type="text" name="c_name"  placeholder="未填写" required><br>
               <label for="movie_fname">外文名称</label><input id="movie_fname" type="text" name="f_name"  placeholder="未填写"><br>
               <button>添加电影</button>
             </form>
           </div>
-          <div class="add_serials">
+          <div class="add_panel">
             <form id="insert_animate" action="doSerialsAdmin.php?act=add" method="post">
               <label for="animate_name">动画名称</label><input id="animate_name" type="text" name="c_name"  placeholder="未填写" required><br>
               <label for="animate_fname">外文名称</label><input id="animate_fname" type="text" name="f_name"  placeholder="未填写"><br>
               <button>添加动画</button>
             </form>
           </div>
-          <div class="add_serials">
+          <div class="add_panel">
             <form id="insert_book" action="doSerialsAdmin.php?act=add" method="post">
               <label for="book_name">书名称</label><input id="book_name" type="text" name="c_name"  placeholder="未填写" required><br>
               <label for="book_fname">外文名称</label><input id="book_fname" type="text" name="f_name"  placeholder="未填写"><br>
               <button>添加图书</button>
             </form>
           </div>
-          <div class="add_music">
+          <div class="add_panel">
             <form id="insert_music" action="doSerialsAdmin.php?act=add" method="post">
               <label for="book_name">音乐id</label><input id="music_id" type="text" name="music_id"  placeholder="未填写" required><br>
-              <label for="music_type">类型</label>
+              <label for="music_type">类型</label><br>
               <select id="music_type" name="music_type">
                 <option title="原创类" value="2" selected>2</option>
                 <option title="再创作类" value="3">3</option>
@@ -322,9 +314,13 @@
                 <label for="types">类型</label><input type="text" id="types" name="types" placeholder="使用空格或逗号分隔">
                 <label for="district">地区</label><br>
                 <select id="district" name="district">
-                  <option value="大陆" selected>大陆</option>
-                  <option value="美国">美国</option>
+                  <option value="大陆">大陆</option>
+                  <option value="美国" selected>美国</option>
                   <option value="英国">英国</option>
+                  <option value="日本">日本</option>
+                  <option value="韩国">韩国</option>
+                  <option value="香港">香港</option>
+                  <option value="德国">德国</option>
                 </select><br>
                 <label for="state">状态</label><br>
                 <select id="state" name="state">
@@ -405,30 +401,22 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/fine-uploader/dist/jquery.fine-uploader.js"></script>
+    <script src="../../bower_components/jQuery.mmenu/dist/js/jquery.mmenu.all.min.umd.js"></script>
     <script src="../../bower_components/cookies-js/dist/cookies.js"></script>
+    <script src="../../bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../../bower_components/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="../../bower_components/datatables.net-jqui/js/dataTables.jqueryui.js"></script>
+    <script src="../../bower_components/jquery.tagsinput/src/jquery.tagsinput.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/plugins.js -->
-    <!--<script src="../../bower_components/jquery-ui/ui/core.js"></script>-->
-    <script src="scripts/jquery-ui-core.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widget.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/button.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/menu.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/checkboxradio.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/accordion.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/datepicker.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/selectmenu.js"></script>
-    <script src="../../bower_components/jquery-ui/ui/widgets/spinner.js"></script>
-    <script src="../../bower_components/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js"></script>
-    <script src="../../bower_components/datatables.net/js/jquery.dataTables.js"></script>
-    <script src="../../bower_components/datatables.net-jqui/js/dataTables.jqueryui.js"></script>
-    <script src="../../bower_components/fine-uploader/dist/jquery.fine-uploader.js"></script>
-    <script src="../../bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../../bower_components/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
+    <script src="./scripts/AdminServer.js"></script>
     <script src="./scripts/AdminSerials.js"></script>
     <script src="./scripts/AdminMovies.js"></script>
     <script src="./scripts/AdminMusics.js"></script>

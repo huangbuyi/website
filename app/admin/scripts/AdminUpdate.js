@@ -5,12 +5,17 @@
 var AdminUpdate = (function(window){
     var container = "#serials_update";
 
+
+    var show = function(){
+        $(container).show();
+    };
+
+    var hide = function(){
+        $(container).hide();
+    };
+
     return {
-        show: function(){
-            $(container).show();
-        },
-        hide: function(){
-            $(container).hide();
-        }
-    }
+        show: show,
+        hide: hide
+    };
 })(window)

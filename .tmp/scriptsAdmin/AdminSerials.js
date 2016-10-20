@@ -145,6 +145,14 @@ var AdminSerials = function (window) {
             heightStyle: "content",
             allCollapsible: true
         });
+        $("#release_date").datepicker({
+            dateFormat: "yy-mm-dd",
+            changeMonth: true,
+            changeYear: true,
+            maxDate: "+1y",
+            minData: new Date("1930,1,1,1"),
+            yearRange: "1928:2019"
+        });
 
         $("#posters").fineUploader({
             request: {

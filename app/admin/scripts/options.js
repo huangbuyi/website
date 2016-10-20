@@ -35,25 +35,3 @@ $('nav#menu').mmenu({
 
 
 
-
-// todo:复用
-var fineUploaderOptions = {
-    request: {
-        paramsInBody: false,
-        params:{ "act":"upload"},
-        endpoint: "./doSerialsAdmin.php"
-    },
-    validation: {
-        acceptFiles:["jpeg", 'jpg', 'png', 'gif'],
-        sizeLimit: 1048576  // 1024 * 1024 bytes
-    },
-    deleteFile: {
-        enabled:true,
-        params:{ "act":"upload"},
-        forceConfirm: true,
-        endpoint: "./doSerialsAdmin.php"
-    }
-}
-
-
-

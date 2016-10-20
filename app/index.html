@@ -19,22 +19,22 @@
     <meta name="format-detection" content="telephone=no, email=no">
 
     <title>四盒子的主页</title>
+
     <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
     <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css" />
-    <link rel="stylesheet" href="/bower_components/magnific-popup/dist/magnific-popup.css" />
-    <link rel="stylesheet" href="/bower_components/datatables.net-jqui/css/dataTables.jqueryui.css" />
-    <link rel="stylesheet" href="/bower_components/jquery.tagsinput/src/jquery.tagsinput.css" />
+    <link rel="stylesheet" href="../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css" />
+    <link rel="stylesheet" href="../bower_components/magnific-popup/dist/magnific-popup.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="../bower_components/magnific-popup/dist/magnific-popup.css">
-    <link rel="stylesheet" href="../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css">
+    <!--<link rel="stylesheet" href="../bower_components/magnific-popup/dist/magnific-popup.css">-->
+    <!--<link rel="stylesheet" href="../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css">-->
     <link rel="stylesheet" href="styles/option.css">
     <!-- endbuild -->
 
@@ -74,7 +74,7 @@
             <li>
                 <span>他的作品</span>
                 <ul>
-                    <li><a id="w_programs" href="javascript:void(0)">程序</a></li>
+                    <li><a id="w_programs" href="#programs">程序</a></li>
                     <li><a id="w_photograph" class="disabled" href="javascript:void(0)">摄影</a></li>
                     <li><a id="w_others" class="disabled" href="javascript:void(0)">其它</a></li>
                 </ul>
@@ -106,7 +106,7 @@
         <main class="content">
             <div class="about_him">
                 <div id="his_info" class="his_info">
-                    <div class="text_outer"> <p>我，是个普通人。身高不高不矮，体重不重不轻，长度不长不短，没有特长，也没有特短。作为这个世界最渺小的一粒尘埃，我，也要漂移地潇洒，游走地漂亮。</p></div>
+                    <div class="text_outer"> <p>我。喜欢音乐，爱听民谣，也听流行、听摇滚、听翻唱、听古典；喜欢旅行，梦想有天，能带上相机、带上画板、带上女票(有的话)和狗，环游世界；喜欢电影、TV series、ACG，讨厌商业烂片；喜欢看书，希望能有放书的大书架，能有放书架的大房子。不过呢，期望越高，失落感越强，理想的生活永远是我追求的目标，但不是生活质量的标准，走在为了理想而努力的路上，也会是美好生活的一部分。</p></div>
                 </div>
                 <div id="time_line" class="time_line">
                     <div class="years">1993</div>
@@ -259,12 +259,12 @@
             <div id="musics" class="musics" style="display: none">
                 <div class="music_card"></div>
             </div>
-            <div class="programes" style="display: none">
+            <div id="programs" class="programs" style="display: none">
                 <div class="grid">
                     <div class="grid-item">
                         <div>
                             <!-- 添加作品链接 -->
-                            <a title="点击查看项目" href="http://www.baidu.com">
+                            <a title="点击查看项目" target="_blank" href="http://www.4bin.cn/projects">
                                 <img src="./images/p_visualization_audio_player.jpg">
                             </a>
 
@@ -277,7 +277,10 @@
                     </div>
                     <div class="grid-item">
                         <div>
-                            <img src="./images/p_svg_map.jpg">
+                            <a target="_blank" href="http://www.4bin.cn/projects/svgmap/starbucks_index.html">
+                                <img src="./images/p_svg_map.jpg">
+                            </a>
+
                             <div>
                                 <h2>数据可视化-中国省份地图</h2>
                                 <p class="functions">可改数据，动态染色，json数据，hover显示详细内容 ...</p>
@@ -331,13 +334,15 @@
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-
-    <!-- build:js scripts/plugins.js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js"></script>
     <script src="../bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+    <script src="../bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="../bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="../bower_components/jQuery.mmenu/dist/js/jquery.mmenu.all.min.umd.js"></script>
     <script src="../bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../bower_components/imagesloaded/imagesloaded.pkgd.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->

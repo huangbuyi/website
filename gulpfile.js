@@ -114,12 +114,22 @@ gulp.task('images', () => {
     .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'));
 });
+gulp.task('imagesCss', () => {
+  return gulp.src('app/styles/images/**/*')
+      .pipe($.cache($.imagemin()))
+      .pipe(gulp.dest('dist/styles/images'));
+});
 
 /* 转admin文件夹 */
 gulp.task('imagesAdmin', () => {
   return gulp.src('app/admin/images/**/*')
       .pipe($.cache($.imagemin()))
       .pipe(gulp.dest('dist/admin/images'));
+});
+gulp.task('imagesCssAdmin', () => {
+  return gulp.src('app/admin/styles/images/**/*')
+      .pipe($.cache($.imagemin()))
+      .pipe(gulp.dest('dist/admin/styles/images'));
 });
 
 gulp.task('fonts', () => {
@@ -204,34 +214,107 @@ gulp.task('serve:test', ['scripts'], () => {
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
 
+
 // inject bower components 重新设置
 gulp.task('wiredep', () => {
-  gulp.src('app/styles/*.scss')
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)+/
-    }))
-    .pipe(gulp.dest('app/styles'));
+  /* 暂时未使用sass */
+  // gulp.src('app/styles/*.scss')
+  //   .pipe(wiredep({
+  //     ignorePath: /^(\.\.\/)+/
+  //   }))
+  //   .pipe(gulp.dest('app/styles'));
 
-  gulp.src('app/*.html')
+  gulp.src('app/index.html')
     .pipe(wiredep({
+
+      // 默认bower.json文件包含两个页面的依赖，所以指定一个bowerJSON为单个页面添加依赖
+      bowerJson:{
+        "dependencies": {
+          "jquery": "^3.1.1",
+          "masonry": "^4.1.1",
+          "imagesloaded": "^4.1.1",
+          "jQuery.mmenu": "mmenu#^5.7.4",
+          "magnific-popup": "^1.1.0",
+        },
+        "overrides": {
+          "masonry": {
+            "main": "dist/masonry.pkgd.min.js",    // 选用该文件做主文件，因为原主文件依赖一个项目有错误
+            "dependencies": {}      // 该文件不需要其它依赖
+          }
+        }
+      },
       exclude: ['bootstrap-sass'],
-      ignorePath: /^(\.\.\/)*\.\./
+
+      ignorePath: /^(\.\.\/)*\.\./,
+      fileTypes: {
+
+        // 将默认路径 '/' 改为 '../'
+        html: {
+          replace: {
+            js: '<script src="' + '..' + '{{filePath}}"></script>',
+            css: '<link rel="stylesheet" href="' + '..' + '{{filePath}}" />'
+          }
+        }
+      }
     }))
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('wiredepAdmin', () => {
+
+  gulp.src('app/admin/index.html')
+      .pipe(wiredep({
+
+        // 默认bower.json文件包含两个页面的依赖，所以指定一个bowerJSON为单个页面添加依赖
+        bowerJson:{
+          "dependencies": {
+            "jquery": "^3.1.1",
+            "fine-uploader": "^5.11.8",
+            "jQuery.mmenu": "mmenu#^5.7.4",
+            "cookies-js": "^1.2.2",
+            "magnific-popup": "^1.1.0",
+            "datatables.net-jqui": "^1.10.12",
+            "jquery-ui": "jquery.ui#^1.12.1",
+            "jquery.tagsinput": "xoxco/jQuery-Tags-Input#^1.3.6",
+          },
+          "overrides": {
+            "fine-uploader": {
+              "main": ["dist/fine-uploader-new.css", "dist/jquery.fine-uploader.js"]    // 选用该文件做主文件
+            },
+            "jquery-ui": {
+              "main":["ui/"]
+            }
+          }
+        },
+        exclude: ['bootstrap-sass'],
+
+        ignorePath: /^(\.\.\/)*\.\./,
+        fileTypes: {
+
+          // 将默认路径 '/' 改为 '../'
+          html: {
+            replace: {
+              js: '<script src="' + '../..' + '{{filePath}}"></script>',
+              css: '<link rel="stylesheet" href="' + '../..' + '{{filePath}}" />'
+            }
+          }
+        }
+      }))
+      .pipe(gulp.dest('app/admin'));
+});
+
+gulp.task('build', ['lint', 'html', 'images', 'imagesCss', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('buildAdmin', ['htmlAdmin', 'imagesAdmin', 'php', 'uploads', 'sql', 'extrasAdmin'], () => {
+gulp.task('buildAdmin', ['htmlAdmin', 'imagesAdmin', 'imagesCssAdmin', 'php', 'uploads', 'sql', 'extrasAdmin'], () => {
   return gulp.src('dist/admin/**/*').pipe($.size({title: 'buildAdmin', gzip: true}));
 });
 
-gulp.task('default', () => {
-  runSequence(['clean'], 'build', 'buildAdmin');
-});
-
 // gulp.task('default', () => {
-//   runSequence(['clean', 'wiredep'], 'build', 'buildAdmin');
+//   runSequence(['clean'], 'build', 'buildAdmin');
 // });
+
+gulp.task('default', () => {
+  runSequence(['clean', 'wiredep', 'wiredepAdmin'], 'build', 'buildAdmin');
+});

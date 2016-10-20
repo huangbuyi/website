@@ -4,23 +4,35 @@
 
 var Comman = (function(window){
 
-    var isScrollOver = function(selector,bottom){
+    var isScrollOver = function(grid, bottom){
         var bottom = bottom || 10;
             scrollTop = $('main').scrollTop(),
-            scrollHeight = $(selector).height() + $('.header').height(),
+            scrollHeight = $(grid).height() + $('.header').height(),
             windowHeight = innerHeight,
             scrollWhole = Math.max(scrollHeight - scrollTop - windowHeight);
 
-        return (scrollWhole < bottom) || $('main').width() > 2 * $(selector).width();
+        return scrollWhole < bottom;
     }
+
+    var isFilled = function(grid, item, scale){
+        var scale = scale || 1.5;
+        return $('main').width() - $(grid).width() > scale * $(item).width();
+    }
+
+    var isLoadData = function(grid, item){
+        return isScrollOver(grid) || isFilled(grid, item);
+    }
+
 
     var testSelector = function(selector) {
         return (selector && $(selector).length >= 1) ? $(selector).length : false;
     }
 
     return {
-        isScrollOver:isScrollOver,
-        testSelector:testSelector
+        isScrollOver: isScrollOver,
+        testSelector: testSelector,
+        isFilled: isFilled,
+        isLoadData: isLoadData
     }
 })(window)
 

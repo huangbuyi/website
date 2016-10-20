@@ -19,7 +19,11 @@ var AdminSerials = (function(window){
         // 重新加载数据
         table.api().ajax.url("doSerialsAdmin.php?act=get&page=1&pageSize=999").load();
         $(container).show();
-    }
+    };
+
+    var hide = function(){
+        $(container).hide();
+    };
 
     // 配置插件
     function setOptions(){
@@ -167,6 +171,14 @@ var AdminSerials = (function(window){
             heightStyle: "content",
             allCollapsible: true
         });
+        $("#release_date").datepicker({
+            dateFormat: "yy-mm-dd",
+            changeMonth:true,
+            changeYear:true,
+            maxDate:"+1y",
+            minData:new Date("1930,1,1,1"),
+            yearRange:"1928:2019"
+        })
 
 
         $("#posters").fineUploader({
@@ -458,9 +470,7 @@ var AdminSerials = (function(window){
     return {
         init:init,
         show: show,
-        hide: function(){
-            $(container).hide();
-        }
+        hide: hide,
     };
 
 })(window)

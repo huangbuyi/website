@@ -9,6 +9,7 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PWD", "huang123");
+define("DB_CHARSET", "utf8");
 
 function fetch_all($res, $flag = 0){
     $arr = array();
@@ -30,7 +31,7 @@ function fetch_all($res, $flag = 0){
 
 function connectDB($dbname = 'serials'){
     $con = mysqli_connect(DB_HOST, DB_USER, DB_PWD, $dbname) or die("数据库连接失败Error:".mysqli_errno().":".mysqli_error());
-    //mysqli_set_charset(DB_CHARSET);
+    mysqli_set_charset($con, DB_CHARSET);
     return $con;
 }
 

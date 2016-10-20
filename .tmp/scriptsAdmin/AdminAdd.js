@@ -9,7 +9,8 @@ var AdminAdd = function (window) {
 
     var init = function init() {
 
-        $("#insert_music").on("submit", function () {
+        $("#insert_music").on("submit", function (event) {
+            event.preventDefault();
             var _this = this;
             $.ajax({
                 type: "post",

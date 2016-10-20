@@ -48,10 +48,6 @@ var Serials = function (window) {
             gutter: 10,
             fitWidth: true
         });
-        $('.serialsCard').on('click', '.grid-item', function () {
-            $(this).hide();
-            $(gridSelector).masonry('layout');
-        });
     }
 
     /**
@@ -180,7 +176,7 @@ var Serials = function (window) {
         }
 
         // 页面滚动到接近底部时，加载更多数据
-        if (Comman.isScrollOver(gridSelector)) {
+        if (Comman.isLoadData(gridSelector, '.grid-item')) {
             hasScrolled = true; // 加载过程中，禁止重复触发
 
             // ajax配置项

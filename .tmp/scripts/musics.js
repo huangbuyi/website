@@ -50,7 +50,7 @@ var Musics = function (window) {
             return;
         }
 
-        if (!Comman.isScrollOver(gridSelector)) {
+        if (!Comman.isLoadData(gridSelector, '.music_item')) {
             return;
         }
         hasScrolled = true;

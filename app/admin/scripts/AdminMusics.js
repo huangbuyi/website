@@ -5,12 +5,16 @@
 var AdminMusics = (function(window){
     var container = ".musics";
 
+    var show = function(){
+        $(container).show();
+    };
+
+    var hide = function(){
+        $(container).hide();
+    };
+
     return {
-        show: function(){
-            $(container).show();
-        },
-        hide: function(){
-            $(container).hide();
-        }
-    }
+        show: show,
+        hide: hide
+    };
 })(window)

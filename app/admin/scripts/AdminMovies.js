@@ -4,12 +4,16 @@
 var AdminMovies = (function(window){
     var container = ".movies";
 
+    var show = function(){
+        $(container).show();
+    };
+
+    var hide = function(){
+        $(container).hide();
+    };
+
     return {
-        show: function(){
-            $(container).show();
-        },
-        hide: function(){
-            $(container).hide();
-        }
-    }
+        show: show,
+        hide: hide
+    };
 })(window)

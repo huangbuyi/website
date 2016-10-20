@@ -37,11 +37,6 @@ $('nav#menu').mmenu({
 });
 
 
-/* 瀑布流插件masory配置 */
-$('.grid').masonry({
-    itemSelector: '.grid-item',     // 子元素
-    gutter: 10,
-    fitWidth: true                    // 宽度自适应
-});
+
 
 

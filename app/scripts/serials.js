@@ -15,7 +15,6 @@ var Serials = (function(window){
         containerSelector = '',
         gridSelector = '';
 
-
     function init(o){
         if(typeof o !== 'object'){
             throw new ReferenceError('Init Serials failed, param isn\'t a object');
@@ -46,12 +45,7 @@ var Serials = (function(window){
             gutter: 10,
             fitWidth: true
         })
-        $('.serialsCard').on('click','.grid-item',function () {
-            $(this).hide();
-            $(gridSelector).masonry('layout');
-        })
     }
-
 
     /**
      * 显示分数为星星
@@ -67,7 +61,6 @@ var Serials = (function(window){
         var stateCN = {'updating':'更新中','end':'完结','schedule':'预定','unknow':'未知'};
         return stateCN[state] ? stateCN[state] : '未知';
     }
-
 
     /**
      *将电视剧数据转化为html代码
@@ -172,7 +165,7 @@ var Serials = (function(window){
         }
 
         // 页面滚动到接近底部时，加载更多数据
-        if(Comman.isScrollOver(gridSelector)){
+        if(Comman.isLoadData(gridSelector, '.grid-item')){
             hasScrolled = true;     // 加载过程中，禁止重复触发
 
             // ajax配置项
