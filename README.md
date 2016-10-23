@@ -1,5 +1,6 @@
 单页面网站([4bin.cn](http://4bin.cn))
 ========================================
+
 1. [网站介绍](#user-content-head1)
 2. [功能设计](#user-content-head2)
 3. [数据库设计](#user-content-head3)
@@ -9,6 +10,7 @@
 7. [后台页](#user-content-head7)
 8. [构建](#user-content-head8)
 9. [附录](#user-content-head9)
-* * *
+
+***
 ## 1 网站简介<h4 id="head1"></h4>
 
