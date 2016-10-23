@@ -13,8 +13,6 @@
 8. [构建](#user-content-head8)
 9. [附录](#user-content-head9)
 
-***
-
 ## 1 网站简介<h4 id="head1"></h4>
 语言:JavaScript+PHP+Mysql
 
