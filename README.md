@@ -9,6 +9,6 @@
 7. [后台页](#user-content-head7)
 8. [构建](#user-content-head8)
 9. [附录](#user-content-head9)
-_________________________________________
+* * *
 ## 1 网站简介<h4 id="head1"></h4>
 
