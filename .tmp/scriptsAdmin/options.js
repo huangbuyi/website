@@ -25,4 +25,6 @@ $('nav#menu').mmenu({
         setSelected: true
     }
 });
+
+$('nav#menu').data('mmenu').update();
 //# sourceMappingURL=options.js.map

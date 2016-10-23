@@ -22,7 +22,11 @@ var AdminSerials = function (window) {
         // 重新加载数据
         table.api().ajax.url("doSerialsAdmin.php?act=get&page=1&pageSize=999").load();
         $(container).show();
-    }
+    };
+
+    var hide = function hide() {
+        $(container).hide();
+    };
 
     // 配置插件
     function setOptions() {
@@ -434,9 +438,7 @@ var AdminSerials = function (window) {
     return {
         init: init,
         show: show,
-        hide: function hide() {
-            $(container).hide();
-        }
+        hide: hide
     };
 }(window);
 //# sourceMappingURL=AdminSerials.js.map

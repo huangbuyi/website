@@ -130,6 +130,9 @@ function init() {
         });
     });
 
+    // 监听触摸事件
+    bindTouch();
+
     /**
      * 登录状态变为未登录
      */
@@ -150,5 +153,24 @@ function init() {
             $(".log_state").text(user);
         }
     }
+}
+
+function bindTouch() {
+    // create a manager for that element
+    var mc = new Hammer.Manager(window);
+
+    // create a recognizer
+    var Swipe = new Hammer.Swipe();
+
+    // add the recognizer
+    mc.add(Swipe);
+
+    // subscribe to events
+    mc.on('swiperight', function (e) {
+        $('nav#menu').data('mmenu').open();
+    });
+    mc.on('swipeleft', function (e) {
+        $('nav#menu').data('mmenu').close();
+    });
 }
 //# sourceMappingURL=index.js.map

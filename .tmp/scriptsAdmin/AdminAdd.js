@@ -7,6 +7,14 @@
 var AdminAdd = function (window) {
     var container = "#insert_items";
 
+    var show = function show() {
+        $(container).show();
+    };
+
+    var hide = function hide() {
+        $(container).hide();
+    };
+
     var init = function init() {
 
         $("#insert_music").on("submit", function (event) {
@@ -35,12 +43,8 @@ var AdminAdd = function (window) {
 
     return {
         init: init,
-        show: function show() {
-            $(container).show();
-        },
-        hide: function hide() {
-            $(container).hide();
-        }
+        show: show,
+        hide: hide
     };
 }(window);
 //# sourceMappingURL=AdminAdd.js.map

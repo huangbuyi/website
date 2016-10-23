@@ -10,7 +10,7 @@ var AdminAdd = (function(window){
         $(container).show();
     };
 
-    var hid = function(){
+    var hide = function(){
         $(container).hide();
     };
 

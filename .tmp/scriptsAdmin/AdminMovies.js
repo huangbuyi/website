@@ -6,13 +6,17 @@
 var AdminMovies = function (window) {
     var container = ".movies";
 
+    var show = function show() {
+        $(container).show();
+    };
+
+    var hide = function hide() {
+        $(container).hide();
+    };
+
     return {
-        show: function show() {
-            $(container).show();
-        },
-        hide: function hide() {
-            $(container).hide();
-        }
+        show: show,
+        hide: hide
     };
 }(window);
 //# sourceMappingURL=AdminMovies.js.map

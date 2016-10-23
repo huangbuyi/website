@@ -7,7 +7,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  */
 
 var Projects = function (window) {
-    var show, init, containerSelector, gridSelector;
+    var show, hide, init, setOptions, containerSelector, gridSelector;
+
     init = function init(o) {
         if ((typeof o === 'undefined' ? 'undefined' : _typeof(o)) !== 'object') {
             throw new ReferenceError('Init Project failed, param isn\'t a object');
@@ -27,6 +28,13 @@ var Projects = function (window) {
             throw new ReferenceError('Init Project failed, grid selector isn\'t existed or more than one');
             return;
         };
+
+        /* 瀑布流插件masory配置 */
+        $('.grid').masonry({
+            itemSelector: '.grid-item', // 子元素
+            gutter: 10,
+            fitWidth: true // 宽度自适应
+        });
     };
 
     show = function show() {

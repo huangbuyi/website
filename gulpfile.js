@@ -235,6 +235,7 @@ gulp.task('wiredep', () => {
           "imagesloaded": "^4.1.1",
           "jQuery.mmenu": "mmenu#^5.7.4",
           "magnific-popup": "^1.1.0",
+          "hammerjs": "hammer.js#^2.0.8"
         },
         "overrides": {
           "masonry": {
@@ -276,13 +277,11 @@ gulp.task('wiredepAdmin', () => {
             "datatables.net-jqui": "^1.10.12",
             "jquery-ui": "jquery.ui#^1.12.1",
             "jquery.tagsinput": "xoxco/jQuery-Tags-Input#^1.3.6",
+            "hammerjs": "hammer.js#^2.0.8"
           },
           "overrides": {
             "fine-uploader": {
               "main": ["dist/fine-uploader-new.css", "dist/jquery.fine-uploader.js"]    // 选用该文件做主文件
-            },
-            "jquery-ui": {
-              "main":["ui/"]
             }
           }
         },

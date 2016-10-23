@@ -32,6 +32,8 @@ $('nav#menu').mmenu({
     }
 });
 
+$('nav#menu').data( 'mmenu' ).update();
+
 
 
 

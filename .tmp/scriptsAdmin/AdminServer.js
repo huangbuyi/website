@@ -5,6 +5,16 @@
  */
 
 var AdminServer = function (window) {
+    var container = ".server";
+
+    var show = function show() {
+        getServerInfo();
+        $(container).show();
+    };
+
+    var hide = function hide() {
+        $(container).hide();
+    };
 
     function getServerInfo() {
         var option = {};
@@ -26,10 +36,8 @@ var AdminServer = function (window) {
         $.ajax(option);
     }
     return {
-        show: function show() {
-            getServerInfo();
-            $(".server").show();
-        }
+        show: show,
+        hide: hide
     };
 }(window);
 //# sourceMappingURL=AdminServer.js.map
