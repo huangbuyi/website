@@ -1,6 +1,8 @@
 单页面网站([4bin.cn](http://4bin.cn))
 ========================================
 
+## 0 目录
+
 1. [网站介绍](#user-content-head1)
 2. [功能设计](#user-content-head2)
 3. [数据库设计](#user-content-head3)
@@ -14,4 +16,5 @@
 ***
 
 ## 1 网站简介<h4 id="head1"></h4>
+语言:JavaScript+PHP+Mysql
 
