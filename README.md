@@ -9,7 +9,7 @@
 4. [设计规范](#user-content-head4)
 5. [服务端](#user-content-head5)
 6. [展示页](#user-content-head6)
-7. [后台页](#user-content-head7)
+7. [控制台](#user-content-head7)
 8. [构建](#user-content-head8)
 9. [附录](#user-content-head9)
 
@@ -57,5 +57,27 @@ P 12px Regular
 ## 5、服务端<h4 id="head5"></h4>   
 服务端使用PHP+Mysql实现，所有前端请求统一受理，发送的数据全部编码为json格式。服务端只负责数据存取和处理，不负责任何前端页面的展示工作。/lib路径下存放通用函数，/core路径下存放业务代码，include.php负责引入头文件。
 
+## 6、展示页<h4 id="head6"></h4>  
+展示页配合成熟插件实现无刷新导航，瀑布流布局，动态加载等技术。  
+###插件使用  
+导航菜单：[jquery-mmenu](http://mmenu.frebsite.nl/)    
+瀑布流布局：[masonry](http://masonry.desandro.com/)    
+灯箱：[magnific-popup](http://dimsemenov.com/plugins/magnific-popup/)    
+图片加载：[imagesloaded](http://imagesloaded.desandro.com/)  
+手势库：[hammerjs](http://hammerjs.github.io/)  
 
+## 7、控制台<h4 id="head7"></h4>  
+控制台配合成熟插件实现无刷新导航，用户验证等功能。    
+###插件使用    
+导航菜单：[jquery-mmenu](http://mmenu.frebsite.nl/)   
+灯箱：[magnific-popup](http://dimsemenov.com/plugins/magnific-popup/)    
+手势库：[hammerjs](http://hammerjs.github.io/)   
+UI库：[jquery-ui](http://jqueryui.com/)    
+Cookie：[cookies.js](https://github.com/franciscop/cookies.js)  
+表格插件：[datatables](https://datatables.net/)  
+tags输入：[tagsinput](http://jquery-plugins.net/bootstrap-tags-input)  
+上传插件：[fine-uploader](http://fineuploader.com/)
+
+## 8、服务端<h4 id="head8"></h4>  
+构建工具使用Gulp+Bower+Yeoman的组合。js、html、css等文件正常构建，php文件则直接复制。主页和控制台两个页面在统一gulp配置文件中配置。
 
