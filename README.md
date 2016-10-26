@@ -58,7 +58,7 @@ P 12px Regular
 服务端使用PHP+Mysql实现，所有前端请求统一受理，发送的数据全部编码为json格式。服务端只负责数据存取和处理，不负责任何前端页面的展示工作。/lib路径下存放通用函数，/core路径下存放业务代码，include.php负责引入头文件。
 
 ## 6、展示页<h4 id="head6"></h4>  
-展示页配合成熟插件实现无刷新导航，瀑布流布局，动态加载等技术。  
+展示页配合成熟插件实现无刷新导航，瀑布流布局，动态加载等技术。向服务器请求数据，并将获取的数据美美地展示出来。 
 ###插件使用  
 导航菜单：[jquery-mmenu](http://mmenu.frebsite.nl/)    
 瀑布流布局：[masonry](http://masonry.desandro.com/)    
@@ -67,7 +67,7 @@ P 12px Regular
 手势库：[hammerjs](http://hammerjs.github.io/)  
 
 ## 7、控制台<h4 id="head7"></h4>  
-控制台配合成熟插件实现无刷新导航，用户验证等功能。    
+控制台配合成熟插件实现无刷新导航，用户验证等功能。负责数据的增、删、改、添。
 ###插件使用    
 导航菜单：[jquery-mmenu](http://mmenu.frebsite.nl/)   
 灯箱：[magnific-popup](http://dimsemenov.com/plugins/magnific-popup/)    
