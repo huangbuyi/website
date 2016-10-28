@@ -11,7 +11,7 @@
 6. [展示页](#user-content-head6)
 7. [控制台](#user-content-head7)
 8. [构建](#user-content-head8)
-9. [附录](#user-content-head9)
+9. [提升](#user-content-head9)
 
 ## 1、网站简介<h4 id="head1"></h4>
 4bin,.cn是一个个人网站，也是一个分享网站，站主会分享时下最热门、最好看的美、英连续剧，以及一些好听的民谣音乐。网站使用 JavaScript + PHP + mysql 搭建，部署在[阿里云](https://www.aliyun.com)平台的虚拟空间上。现在仍在开发中，许多新功能仍在陆续添加....    
@@ -78,6 +78,11 @@ Cookie：[cookies.js](https://github.com/franciscop/cookies.js)
 tags输入：[tagsinput](http://jquery-plugins.net/bootstrap-tags-input)  
 上传插件：[fine-uploader](http://fineuploader.com/)
 
-## 8、服务端<h4 id="head8"></h4>  
+## 8、构建<h4 id="head8"></h4>  
 构建工具使用Gulp+Bower+Yeoman的组合。js、html、css等文件正常构建，php文件则直接复制。主页和控制台两个页面在统一gulp配置文件中配置。
 
+## 9、提升<h4 id="head9"></h4>  
+网站仍有需要不足的地方，有些因水平不够认识不到，有些因能力不足暂时先搁置，有些已经纳入到改善计划内。
+需要提升的地方
+1. 安全性：拼接sql语句，提交的数据未转码，表单未添加token，账号密码明文存储，使用管理员账号连接数据库...
+2. 兼容性：css不兼容ie8及更早浏览器，
