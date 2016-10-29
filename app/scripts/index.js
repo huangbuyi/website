@@ -28,8 +28,6 @@ $(window).ready(function (){
     })
 
     init();
-    // 设置初始页面
-
 })
 
 
@@ -39,7 +37,6 @@ function init(){
         hash = window.location.hash,
         $target = $('nav#menu').find('a:not(.disabled)[href=\'' + hash + '\']');
 
-
     Show.show();
 
     // 禁用未开放的功能
@@ -47,7 +44,6 @@ function init(){
         event.preventDefault();
         event.stopPropagation();
     });
-
 
     /* 导航插件mmenu配置 */
     $('nav#menu').mmenu({
@@ -125,7 +121,6 @@ function init(){
             throw new Error('Navigate failed:target object haven\'t show function');
             return;
         }
-
 
         Show = nav[nav_id];
         Show.show();

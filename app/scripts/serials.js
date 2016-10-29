@@ -140,7 +140,6 @@ var Serials = (function(window){
                 banner = 'new_add';
             }
 
-
             html += '<div class=\'grid-item ' + banner + '\' data-id=\'' + d['id'] + '\'><div class=\'serials_info\'>' + poster_html +
                 c_name_html + f_name_html + director_html + acots_html + issuer_html + distinct_html +
                 state_html + duration_html + episode_number_html + season_number_html + reco_index_html +
