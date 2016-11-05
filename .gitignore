@@ -1,7 +1,6 @@
 # packages directory
 /node_modules/
 /bower_components/
-app/admin/uploads/**
 
 # Windows image file caches
 Thumbs.db

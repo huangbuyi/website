@@ -94,4 +94,5 @@ tags输入：[tagsinput](http://jquery-plugins.net/bootstrap-tags-input)
 8. css风格：命名不规范，属性顺序不规范，缺少注释，适合改用sass或less  
 9. json：前后端交换json的格式不够统一  
 10. error：错误处理机制不完善  
-11. 其它  
+11. 不符合用户习惯，功能不实用
+12. 其它  
