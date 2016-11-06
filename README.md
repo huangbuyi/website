@@ -95,4 +95,5 @@ tags输入：[tagsinput](http://jquery-plugins.net/bootstrap-tags-input)
 9. json：前后端交换json的格式不够统一  
 10. error：错误处理机制不完善  
 11. 不符合用户习惯，功能不实用
-12. 其它  
+12. 不合适SEO优化
+13. 其它  
