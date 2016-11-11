@@ -68,6 +68,7 @@ P 12px Regular
 
 ## 7、控制台<h4 id="head7"></h4>  
 控制台配合成熟插件实现无刷新导航，用户验证等功能。负责数据的增、删、改、添。
+
 ###插件使用    
 导航菜单：[jquery-mmenu](http://mmenu.frebsite.nl/)   
 灯箱：[magnific-popup](http://dimsemenov.com/plugins/magnific-popup/)    
@@ -96,4 +97,4 @@ tags输入：[tagsinput](http://jquery-plugins.net/bootstrap-tags-input)
 10. error：错误处理机制不完善  
 11. 不符合用户习惯，功能不实用
 12. 不合适SEO优化
-13. 其它  
+
